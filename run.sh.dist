@@ -1,0 +1,11 @@
+docker build -t user/image-name:latest .
+docker push user/imagename
+docker rm -f container-name
+docker run -it -v "$PWD/config.cfg:/var/buildkite-agent.cfg" \
+-v "/var/run/docker.sock:/var/run/docker.sock" \
+-e BUILDKITE_AGENT_TOKEN="" \
+-e "BUILDKITE_AGENT_CONFIG=/var/buildkite-agent.cfg" \
+-v $SSH_AUTH_SOCK:/ssh-agent \
+-e SSH_AUTH_SOCK=/ssh-agent \
+-v "$HOME/.ssh:/root/.ssh" \
+ --name conainer-name user/image-name

@@ -3,9 +3,12 @@ docker push user/imagename
 docker rm -f container-name
 docker run -it -v "$PWD/config.cfg:/var/buildkite-agent.cfg" \
 -v "/var/run/docker.sock:/var/run/docker.sock" \
--e BUILDKITE_AGENT_TOKEN="" \
--e "BUILDKITE_AGENT_CONFIG=/var/buildkite-agent.cfg" \
 -v $SSH_AUTH_SOCK:/ssh-agent \
--e SSH_AUTH_SOCK=/ssh-agent \
 -v "$HOME/.ssh:/root/.ssh" \
+-e SSH_AUTH_SOCK=/ssh-agent \
+-e BUILDKITE_AGENT_TOKEN="" \
+-e BUILDKITE_AGENT_CONFIG=/var/buildkite-agent.cfg \
+-e AWS_ACCESS_KEY_ID="" \
+-e AWS_SECRET_ACCESS_KEY="" \
+-e AWS_DEFAULT_REGION="us-east-1" \
  --name conainer-name user/image-name

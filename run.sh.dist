@@ -1,5 +1,4 @@
 docker build -t user/image-name:latest .
-docker push user/imagename
 docker rm -f container-name
 docker run -it -v "$PWD/config.cfg:/var/buildkite-agent.cfg" \
 -v "/var/run/docker.sock:/var/run/docker.sock" \

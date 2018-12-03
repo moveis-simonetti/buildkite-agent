@@ -1,4 +1,4 @@
-FROM buildkite/agent:latest
+FROM buildkite/agent:3.4
 
 ENV AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
 ENV AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}

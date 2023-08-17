@@ -5,6 +5,5 @@ ENV AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
 ENV AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
 
 RUN apk --no-cache update && \
-    apk --no-cache add python py-pip py-setuptools ca-certificates curl groff less coreutils && \
-    pip --no-cache-dir install awscli && \
+    apk --no-cache add aws-cli ca-certificates curl groff less coreutils && \
     rm -rf /var/cache/apk/*
